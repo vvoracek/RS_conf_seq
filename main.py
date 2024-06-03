@@ -22,7 +22,7 @@ try:
     trn.model = torch.load(path)
     trn.model.cuda()
 except:
-    trn.train(num_epochs = 120, bs=1000)
+    trn.train(num_epochs = 120, bs=64)
     torch.save(trn.model, path)
 
 
