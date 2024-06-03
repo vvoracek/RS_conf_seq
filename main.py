@@ -65,7 +65,7 @@ def eval_ub(p):
     for i in range(3):
         t = time()
         c = Certifier(lambd, noise)
-        ret2 = c.certify_ub(trn.model, dataset,skip=100, bs=20, alpha=0.001, targetp=p)
+        ret2 = c.certify_ub(trn.model, dataset,skip=20, bs=100, alpha=0.001, targetp=p)
         cnt = len(ret2)
         N, t = sum([ret2[i][1] for i in ret2])/cnt, (time()-t) /cnt
         Ns.append(N)
