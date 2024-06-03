@@ -60,12 +60,12 @@ def get_normalization_stats(name):
 def get_dataset(name, split):
 
     if name == "cifar" and split == "train":
-        return datasets.CIFAR10("./data/cifar_10", train=True, download=False,
+        return datasets.CIFAR10("./data/cifar_10", train=True, download=True,
                                 transform=transforms.Compose([transforms.RandomCrop(32, padding=4),
                                                               transforms.RandomHorizontalFlip(),
                                                               transforms.ToTensor()]))
     if name == "cifar" and split == "test":
-        return datasets.CIFAR10("./data/cifar_10", train=False, download=False,
+        return datasets.CIFAR10("./data/cifar_10", train=False, download=True,
                                 transform=transforms.ToTensor())
 
     if name == "imagenet" and split == "train":
