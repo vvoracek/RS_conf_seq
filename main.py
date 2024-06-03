@@ -27,7 +27,10 @@ except:
 
 
 rs = [0.5, 1, 1.5]
-ps = [(r+lambd)/2/lambd for r in rs]
+if(noise == 'uniform'):
+    ps = [(r+lambd)/2/lambd for r in rs]
+else:
+    ps = [norm.ppf(r/lambd) for r in rs]
 
 def eval_adaptive(p):
     Ts = []
