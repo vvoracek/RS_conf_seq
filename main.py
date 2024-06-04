@@ -110,9 +110,3 @@ for n in [10**3, 10**4, 10**5]:
     c = Certifier(lambd, noise)
     ret = c.certify_vanilla(trn.model, dataset,skip=20, bs=bs, alpha=0.001, targetp=0.7, n=n)
     np.save(str(ret), l1)
-
-# ret is a list of triples (y, pred, r)
-#
-# y   : actual label
-# pred: predicted label
-# r   : certified radius for pred.
